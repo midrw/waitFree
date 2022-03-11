@@ -1,6 +1,6 @@
 import React from 'react';
 import './PartySize.css';
-
+import {Routes , Route ,NavLink} from 'react-router-dom' 
 
 class NumberKeyboard extends React.Component{
 
@@ -71,7 +71,9 @@ class PartySize extends React.Component{
       <div className="global">
         <div className="header">
           <div className="leftBtn">
-            <div className="button">Back</div>
+            <div className="button">
+              <NavLink to="/">Back</NavLink>
+            </div>
           </div>
           <div className="rightBtn">
             <div className="button ghost">Next</div>

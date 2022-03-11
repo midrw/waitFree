@@ -2,14 +2,15 @@ import './App.css';
 import Welcome from './componet/welcome/Welcome';
 import PartySize from './componet/partySize/PartySize';
 import Phone from './componet/phone/Phone'
+import {Routes , Route ,NavLink} from 'react-router-dom' 
 function App() {
   return (
     <div>
-      <Router>
-        <Route path="welcome" componet={Welcome}></Route>
-        <Route path="partySize" componet={PartySize}></Route>
-        <Route path="Phone" componet={Phone}></Route>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Welcome />}></Route>
+        <Route path="/partySize" element={<PartySize />}></Route>
+        <Route path="/phone" element={<Phone/>}></Route>
+      </Routes>
     </div>
   );
 }

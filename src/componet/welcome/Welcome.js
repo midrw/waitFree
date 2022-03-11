@@ -1,5 +1,6 @@
 import React from 'react';
 import './Welcome.css';
+import {Routes , Route ,NavLink} from 'react-router-dom' 
 
 class Welcome extends React.Component{
 
@@ -17,7 +18,7 @@ class Welcome extends React.Component{
             </div>
             <p>Welcome to Looking For Chai! Please take a ticket by clicking the START below. We will try to serve you as soon as possible. THANK YOU!</p>
             <div className="startBtn button">
-              <a href="#">Start</a>
+              <NavLink to="/partySize">Statr</NavLink>
             </div>
           </div>
           <div className="right">
