@@ -1,0 +1,107 @@
+
+.headerContent{
+    height: 110px;
+    font-size: 35px;
+    font-weight: 900;
+    line-height: 110px;
+    text-align:center;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: #717171;
+}
+
+.logo{
+  position: relative;
+  top: 18px;
+  margin-right: 10px;
+}
+
+.left{
+    padding-left: 56px;
+    padding-top: 40px;
+    padding-right: 26px;
+    line-height: 45px;
+    font-size: 22px;
+    text-align: left;
+
+}
+
+.right{
+  padding-left: 11px;
+  padding-top: 58px;
+}
+
+.left, .right{
+  width: 50%;
+  float: left;
+  display: block;
+  box-sizing: border-box;
+}
+
+.welcomeTitle{
+  text-align: center;
+  font-size: 40px;
+  line-height: 1em;
+}
+
+.startBtn{
+  display: block;
+  margin: 0 auto;
+}
+
+.button, .button a {
+  color: #3cd0a8;
+  text-decoration: none;
+  font-size: 34px;
+  line-height: 44px;
+}
+.button {
+  
+  border: 3px solid #3cd0a8;
+  border-radius: 5px;
+  width: 130px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.tableHeader ,.tableBody{
+  width: 450px;
+  float: left;
+  font-weight: 900;
+  text-align: center;
+}
+
+.tableHeader table , .tableBody table{
+  width: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.tableHeader table thead tr td, 
+.tableBody table thead tr td{
+  background: #3cd0a8;
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #a0e8d5;
+}
+
+.tableHeader table thead tr td:last-child, 
+.tableBody table tbody tr td:last-child{
+    border-right: 0 !important
+}
+
+.tableHeader table tr:last-child td, 
+.tableBody table tr:last-child td{ 
+  border-bottom: 0 !important;
+}
+
+.tableBody table tr td, 
+.tableHeader table tr td{
+  height: 44px;
+  font-size: 24px;
+  line-height: 44px;
+  border-right: 1px solid #969696;
+  border-bottom: 1px solid #b3b3b3;
+  background: #f0f0f0;
+}

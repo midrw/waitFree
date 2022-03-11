@@ -1,0 +1,175 @@
+.textGb{
+  text-align: center;
+}
+
+.headerPh{
+  height: 110px;
+  line-height: 110px;
+  background-color: #717171;
+}
+
+.headerCt{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.phoneKeyboardContainer{
+  position: relative;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.textColor{
+  color: #3cd0a8;
+}
+
+.stepBack{
+  left: 35px;
+}
+
+.stepNext{
+  right: 35px;
+}
+
+.stepNext, .stepBack{
+    position: absolute;
+    top: 50%;
+    height: 80px;
+    margin-top: -40px;
+    font-size: 36px;
+    font-weight: 900;
+    vertical-align: middle;
+}
+
+.stepNext a , .stepBack a{
+  text-decoration: none;
+}
+
+.stepBack .am-icon, .stepNext .am-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.am-icon {
+  fill: currentColor;
+  background-size: cover;
+  width: 44px;
+  height: 44px;
+}
+
+.inputResultp{
+  padding: 10px 8px;
+    height: 68px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 31px;
+    text-align: left;
+}
+
+.phoneIcon{
+  float: left;
+  width: 67px;
+  text-align: center;
+  height: 49px;
+  display: inline-block;
+}
+
+.phoneIcon .am-icon-md {
+  width: 49px;
+  height: 49px;
+}
+
+.phoneKeyboardContainer .phoneKeyboard {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.normal___2DngH {
+  box-sizing: content-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.phoneShow{
+    width: 315px;
+    display: inline-block;
+    float: left;
+    font-size: 34px;
+    box-sizing: border-box;
+    font-weight: 900;
+    padding: 10px 23px 8px 23px;
+    letter-spacing: 2px;
+    line-height: 31px;
+    position: relative;
+}
+
+.phoneShowShadow{
+  position: absolute;
+  color: #def4ee;
+  z-index: 1;
+}
+
+.inputPhoneShow{
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+  background: white;
+}
+
+.separateLine{
+  float: none;
+  height: 4px;
+  width: 100%;
+  border-radius: 4px;
+  background: #3cd0a8;
+}
+
+.keyboardNumber{
+  text-align: center;
+}
+
+.NumberTable{
+  width: 330px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.keyBoardCol{
+  padding: 5px 23px;
+}
+
+.keyboardColCircle{
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 3px solid #3cd0a8;
+  box-sizing: content-box;
+  outline: none;
+  color: #3cd0a8;
+}
+
+.keyboardDelete{
+  font-size: 22px;
+}
+
+.keyboardDeleteIcon{
+  width: 38px;
+  height: 35px;
+}
+

@@ -1,0 +1,188 @@
+.global{
+  text-align: center;
+}
+
+.header{
+  height: 110px;
+  line-height: 110px;
+  background-color: #717171;
+}
+
+.leftBtn , .rightBtn{
+  padding-top: 20px;
+}
+
+.leftBtn{
+  float: left;
+  padding-left: 40px;
+}
+
+.rightBtn{
+  float: right;
+  padding-right: 40px;
+}
+.button{
+    
+    border: 3px solid #3cd0a8;
+    border-radius: 5px;
+    width: 130px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.button.ghost{
+  color: #ffffff;
+}
+
+.headerContent {
+  font-size: 35px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.numberInput{
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 5px;
+    margin-top: 120px;
+    position: relative;
+}
+
+.numberKeyboard{
+  width: 400px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.inputResult{
+  font-size: 42px;
+    font-weight: 900;
+    color: #000000;
+    text-align: center;
+    height: 90px;
+    line-height: 90px;
+    letter-spacing: 4px;
+    background-color: #e0e0e0;
+    background: linear-gradient(180deg, #e0e0e0, #f0f0f0 30%, #eeeeee);
+}
+
+.keyboardTable{
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.keyboardCol{
+  font-size: 46px;
+    background-color: #9ea6b3;
+    color: #ffffff;
+    height: 80px;
+    border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+.keyboardCol:last-child{
+  border-right: 0;
+}
+
+.keyboardDelete{
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.counterContainer{
+    width: 285px;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    padding-left: 20px;
+    box-sizing: border-box;  
+}
+
+.counter{
+  margin-bottom: 15px;
+}
+
+.normal{
+  border: 1px solid #dedede;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-sizing: content-box;
+}
+
+.counterLaber{
+  float: left;
+  display: inline-block;
+  line-height: 38px;
+  height: 38px;
+  border-right: 1px solid #dedede;
+  width: 113px;
+  background-color: #eeeeee;
+  font-size: 12px;
+  font-weight: 700;
+  padding-left: 8px;
+  text-align: left;
+  box-sizing: border-box;
+  
+}
+
+.counterLaber , .normal , .counterContent, .counterOperate, .counterNum{
+  float: left;
+  display: inline-block;
+  line-height: 38px;
+  height: 38px;
+}
+
+.counterOperate{
+  width: 41px;
+  color: #c7c7c7;
+  font-size: 22px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.counterOperate .am-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -13px;
+  margin-top: -13px;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+}
+
+.am-icon-md {
+  width: 44px;
+  height: 44px;
+}
+
+.am-icon {
+  fill: currentColor;
+  background-size: cover;
+  width: 44px;
+  height: 44px;
+}
+
+
+
+.counterNum {
+  border-right: 1px solid #dedede;
+  border-left: 1px solid #dedede;
+  width: 63px;
+}
+
+.counterNum input {
+  outline: none;
+  width: 100%;
+  border: 0;
+  font-size: 20px;
+  height: 38px;
+  padding: 8px 4px;
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+}
