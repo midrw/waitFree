@@ -22,8 +22,13 @@ class Phone extends React.Component{
 
   numberDelete = (e) => {
     if(this.state.phoneNumber.length>0){
-      const newPhoneNumber=this.state.phoneNumber.slice(0,[this.state.phoneNumber.length-1])
-      this.setState({phoneNumber:newPhoneNumber});
+      if(this.state.phoneNumber.length==5 || this.state.phoneNumber.length==10){
+        const newPhoneNumber=this.state.phoneNumber.slice(0,[this.state.phoneNumber.length-2])
+        this.setState({phoneNumber:newPhoneNumber});
+      }else{
+        const newPhoneNumber=this.state.phoneNumber.slice(0,[this.state.phoneNumber.length-1])
+        this.setState({phoneNumber:newPhoneNumber});
+      }
     }
   }
 

@@ -12,8 +12,12 @@ class NumberKeyboard extends React.Component{
     if(this.state.count==0){
       this.setState({count:e.target.innerHTML});
     }else{
-      const newCount=this.state.count+e.target.innerHTML;
-      this.setState({count:newCount});
+      if(this.state.count.length<3){
+        const newCount=this.state.count+e.target.innerHTML;
+        this.setState({count:newCount});
+      }else{
+        return;
+      }   
     }
   }
 
