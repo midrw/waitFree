@@ -1,14 +1,16 @@
 import React from 'react';
 import './Welcome.css';
 import { NavLink } from 'react-router-dom'
-
+import { useReducer } from 'react';
 
 const ReaderRow = () => {
+
+  const forceUpdate = useReducer((bool)=>!bool)[1];
 
   const deleteData = (e) => {
     if (window.confirm('确定删除该顾客？')) {
       sessionStorage.removeItem(e.target.innerHTML);
-      window.location.reload();
+      forceUpdate();
     }else{
       return;
     }
