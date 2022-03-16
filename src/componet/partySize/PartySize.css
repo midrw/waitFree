@@ -186,3 +186,7 @@
   display: block;
   text-align: center;
 }
+
+.keyboardCol:active{
+  background-color:#c7c7c7;
+}

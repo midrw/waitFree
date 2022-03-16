@@ -174,3 +174,8 @@
   height: 35px;
 }
 
+.keyboardColCircle:active{
+  border: 3px solid darkgrey;
+  color:darkgrey;
+}
+
