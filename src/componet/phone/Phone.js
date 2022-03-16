@@ -16,7 +16,7 @@ function Phone(props) {
       alert('电话号码需要13位数');
       return;
     } else {
-      if (window.confirm('准备提交，确认信息正确？')) {
+      if (window.confirm('准备提交，你的派对大小为'+ location.state.people+'人，确认？')) {
         var obj = {
           people: location.state.people,
           stroller: location.state.stroller,
