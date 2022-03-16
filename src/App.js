@@ -15,7 +15,7 @@ export function App() {
     setId(newId);
   }
   return (
-    <div>
+    <div className="select">
       <Routes>
         <Route path="/" element={<Welcome />}></Route>
         <Route path="/partySize" element={<PartySize />}></Route>
