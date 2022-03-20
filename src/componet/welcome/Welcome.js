@@ -19,6 +19,7 @@ const ReaderRow = () => {
   const dataInit = () => {
     for (var i = 0; i < sessionStorage.length; i++) {
       var key = sessionStorage.key(i);
+
       if (!isNaN(key)) {
         var value = sessionStorage.getItem(key);
         var jsonValue = JSON.parse(value);
@@ -39,6 +40,7 @@ const ReaderRow = () => {
       }
     }
   }
+  
   dataInit();
 
   return (

@@ -33,10 +33,10 @@ class NumberKeyboard extends React.Component {
       return;
     } else {
       if (this.state.count.length === 1) {
-        this.setState({ count: '0' })
-        this.triggerChange('0')
+        this.setState({ count: '0' });
+        this.triggerChange('0');
       } else {
-        const newCount = this.state.count.slice(0, [this.state.count.length - 1])
+        const newCount = this.state.count.slice(0, [this.state.count.length - 1]);
         this.setState({ count: newCount });
         this.triggerChange(newCount);
       }

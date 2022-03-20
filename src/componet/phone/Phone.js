@@ -1,8 +1,7 @@
 import React from 'react';
 import './Phone.css';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-
 
 function Phone() {
   let location = useLocation();
@@ -18,6 +17,7 @@ function Phone() {
   const saveData = () => {
     var id = sessionStorage.getItem('id');
     var newId = parseInt(id) + 1;
+
     if (phoneNumber.length < 13) {
       alert('电话号码需要13位数');
       return;
@@ -43,15 +43,18 @@ function Phone() {
 
   const phoneNuemberChange = (e) => {
     const phoneLength = phoneNumber.length;
+    
     if (phoneLength < 13) {
       if (phoneLength === 3 || phoneLength === 8) {
-        const newPhoneNumber = phoneNumber + '-' + e.target.innerHTML
+        const newPhoneNumber = phoneNumber + '-' + e.target.innerHTML;
         const newDefaultNumber = newPhoneNumber + defaultNumber.slice(phoneLength + 2);
+
         setPhoneNumber(newPhoneNumber);
         setDefaultNumber(newDefaultNumber);
       } else {
         const newPhoneNumber = phoneNumber + e.target.innerHTML;
-        const newDefaultNumber = newPhoneNumber + defaultNumber.slice(phoneLength + 1)
+        const newDefaultNumber = newPhoneNumber + defaultNumber.slice(phoneLength + 1);
+
         setPhoneNumber(newPhoneNumber);
         setDefaultNumber(newDefaultNumber);
       }
@@ -59,16 +62,19 @@ function Phone() {
   }
 
   const numberDelete = (e) => {
-    const phoneLength = phoneNumber.length
+    const phoneLength = phoneNumber.length;
+
     if (phoneNumber.length > 0) {
       if (phoneNumber.length === 5 || phoneNumber.length === 10) {
         const newPhoneNumber = phoneNumber.slice(0, [phoneLength - 2]);
         const newDefaultNumber = defaultNumber.slice(0, [phoneLength - 1]) + '0' + defaultNumber.slice(phoneLength);
+
         setPhoneNumber(newPhoneNumber);
         setDefaultNumber(newDefaultNumber);
       } else {
         const newPhoneNumber = phoneNumber.slice(0, [phoneLength - 1]);
         const newDefaultNumber = defaultNumber.slice(0, [phoneLength - 1]) + '0' + defaultNumber.slice(phoneLength);
+
         setPhoneNumber(newPhoneNumber);
         setDefaultNumber(newDefaultNumber);
       }
