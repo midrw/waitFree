@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PartySize.css';
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useRef } from 'react';
 
 class NumberKeyboard extends React.Component {
 
@@ -9,13 +8,20 @@ class NumberKeyboard extends React.Component {
     count: '0',
   }
 
+  triggerChange = (newCount) => {
+    this.props.onChange(newCount);
+  }
+
   countChange = (e) => {
     if (this.state.count == 0) {
-      this.setState({ count: e.target.innerHTML });
+      const newCount = e.target.innerHTML;
+      this.setState({ count: newCount });
+      this.triggerChange(newCount);
     } else {
       if (this.state.count.length < 3) {
         const newCount = this.state.count + e.target.innerHTML;
         this.setState({ count: newCount });
+        this.triggerChange(newCount);
       } else {
         return;
       }
@@ -26,11 +32,13 @@ class NumberKeyboard extends React.Component {
     if (this.state.count == 0) {
       return;
     } else {
-      if (this.state.count.length == 1) {
-        this.setState({ count: 0 })
+      if (this.state.count.length === 1) {
+        this.setState({ count: '0' })
+        this.triggerChange('0')
       } else {
         const newCount = this.state.count.slice(0, [this.state.count.length - 1])
         this.setState({ count: newCount });
+        this.triggerChange(newCount);
       }
     }
   }
@@ -70,15 +78,19 @@ class NumberKeyboard extends React.Component {
 }
 
 class Counter extends React.Component {
-
   state = {
     count: 0,
+  }
+
+  triggerChange = (newCount) => {
+    this.props.onChange(newCount);
   }
 
   decrease = () => {
     if (this.state.count > 0) {
       const newCount = this.state.count - 1;
       this.setState({ count: newCount });
+      this.triggerChange(newCount);
     }
   }
 
@@ -86,14 +98,14 @@ class Counter extends React.Component {
     if (this.state.count < 9) {
       const newCount = this.state.count + 1;
       this.setState({ count: newCount });
+      this.triggerChange(newCount);
     }
   }
-
 
   render() {
     return (
       <div className="counter normal">
-        <div className="counterLaber">{this.props.operate}</div>
+        <div className="counterLaber">{this.props.value}</div>
         <div className="counterContent">
           <div onClick={this.decrease} className="counterOperate">
             <svg className="am-icon am-icon-increase am-icon-md">
@@ -101,7 +113,7 @@ class Counter extends React.Component {
             </svg>
           </div>
           <div className="counterNum">
-            <input type="text" pattern="[0-9]*" value={this.state.count} placeholder="Please Inupt" />
+            <input type="text" pattern="[0-9]*" value={this.state.count} readOnly={true} placeholder="Please Inupt" />
           </div>
           <div onClick={this.increase} className="counterOperate">
             <svg className="am-icon am-icon-increase am-icon-md">
@@ -112,35 +124,37 @@ class Counter extends React.Component {
       </div>
     )
   }
-
 }
 
 const PartySize = () => {
-
-  // const [people, setPeople] = useState('');
-  // const [stroller, setStroller] = useState('');
-  // const [highChair, setHighChair] = useState('');
-  // const [wheelChair, setWheelChair] = useState('');
-  // const [carSeat, setCarSeat] = useState('');
   const navigate = useNavigate();
-  const peopleRef = useRef();
-  const strollerRef = useRef();
-  const highChairRef = useRef();
-  const wheelChairRef = useRef();
-  const carSeatRef = useRef();
+  const [people, setPeople] = useState('0');
+  const [stroller, setStroller] = useState(0);
+  const [highChair, setHighchair] = useState(0);
+  const [wheelChair, setWheelChair] = useState(0);
+  const [carSeat, setChairSeat] = useState(0);
 
+  const onPeopleChange = (newPeople) => {
+    setPeople(newPeople);
+  }
+
+  const onStrollerChange = (newStrollerChange) => {
+    setStroller(newStrollerChange);
+  }
+
+  const onHighChairChange = (newHighChair) => {
+    setHighchair(newHighChair);
+  }
+
+  const onWheelChairChange = (newWheelChair) => {
+    setWheelChair(newWheelChair);
+  }
+
+  const onCarSeatChange = (newCarSeat) => {
+    setChairSeat(newCarSeat);
+  }
 
   const onFinish = () => {
-    // setPeople(peopleRef.current.state.count);
-    // setStroller(strollerRef.current.state.count);
-    // setHighChair(highChairRef.current.state.count);
-    // setWheelChair(wheelChairRef.current.state.count);
-    // setCarSeat(carSeatRef.current.state.count);
-    let people = peopleRef.current.state.count;
-    let stroller = strollerRef.current.state.count;
-    let highChair = highChairRef.current.state.count;
-    let wheelChair = wheelChairRef.current.state.count;
-    let carSeat = carSeatRef.current.state.count;
     if (people === '0') {
       alert('人数不能为0');
       return;
@@ -161,15 +175,6 @@ const PartySize = () => {
     }
   }
 
-
-  //  useEffect(() => {
-  //    if(window.confirm('确认？')){
-  //      navigate('/phone');
-  //   }
-
-  //  }, [carSeat,people,stroller,highChair,wheelChair]);
-
-
   return (
     <div className="global">
       <div className="header">
@@ -186,18 +191,16 @@ const PartySize = () => {
         <div className="headerContent">Party Size</div>
       </div>
       <div className="numberInput">
-        <NumberKeyboard ref={peopleRef}></NumberKeyboard>
+        <NumberKeyboard onChange={onPeopleChange}></NumberKeyboard>
         <div className="counterContainer">
-          <Counter ref={strollerRef} operate="Stroller(s)"></Counter>
-          <Counter ref={highChairRef} operate="High Chair(s)"></Counter>
-          <Counter ref={wheelChairRef} operate="Wheel Chair(s)"></Counter>
-          <Counter ref={carSeatRef} operate="Car Seat(s)"></Counter>
+          <Counter value="Stroller(s)" onChange={onStrollerChange}></Counter>
+          <Counter value="High Chair(s)" onChange={onHighChairChange}></Counter>
+          <Counter value="Wheel Chair(s)" onChange={onWheelChairChange}></Counter>
+          <Counter value="Car Seat(s)" onChange={onCarSeatChange}></Counter>
         </div>
       </div>
     </div>
   )
-
 }
-
 
 export default PartySize;

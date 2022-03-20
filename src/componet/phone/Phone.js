@@ -1,22 +1,28 @@
 import React from 'react';
 import './Phone.css';
-import { NavLink, useLocation ,useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 
-function Phone(props) {
-
+function Phone() {
+  let location = useLocation();
   const navigate = useNavigate();
   const [phoneNumber, setPhoneNumber] = useState('');
-  let location = useLocation();
+  const [defaultNumber, setDefaultNumber] = useState('000-0000-0000')
   const sessionStorage = window.sessionStorage;
 
+  const back = () => {
+    navigate('/partySize');
+  }
+
   const saveData = () => {
+    var id = sessionStorage.getItem('id');
+    var newId = parseInt(id) + 1;
     if (phoneNumber.length < 13) {
       alert('电话号码需要13位数');
       return;
     } else {
-      if (window.confirm('准备提交，你的派对大小为'+ location.state.people+'人，确认？')) {
+      if (window.confirm('准备提交，你的派对大小为' + location.state.people + '人，确认？')) {
         var obj = {
           people: location.state.people,
           stroller: location.state.stroller,
@@ -25,37 +31,46 @@ function Phone(props) {
           carSeat: location.state.stroller,
           phoneNumber: phoneNumber
         }
-        sessionStorage.setItem(props.id, JSON.stringify(obj));
-        props.idChange();
+
+        sessionStorage.setItem(id, JSON.stringify(obj));
+        sessionStorage.setItem('id', newId);
         navigate('/');
-      }else{
+      } else {
         return;
       }
     }
-
   }
 
   const phoneNuemberChange = (e) => {
-    if (phoneNumber.length < 13) {
-      if (phoneNumber.length === 3 || phoneNumber.length === 8) {
+    const phoneLength = phoneNumber.length;
+    if (phoneLength < 13) {
+      if (phoneLength === 3 || phoneLength === 8) {
         const newPhoneNumber = phoneNumber + '-' + e.target.innerHTML
+        const newDefaultNumber = newPhoneNumber + defaultNumber.slice(phoneLength + 2);
         setPhoneNumber(newPhoneNumber);
+        setDefaultNumber(newDefaultNumber);
       } else {
         const newPhoneNumber = phoneNumber + e.target.innerHTML;
+        const newDefaultNumber = newPhoneNumber + defaultNumber.slice(phoneLength + 1)
         setPhoneNumber(newPhoneNumber);
+        setDefaultNumber(newDefaultNumber);
       }
     }
   }
 
-
   const numberDelete = (e) => {
+    const phoneLength = phoneNumber.length
     if (phoneNumber.length > 0) {
       if (phoneNumber.length === 5 || phoneNumber.length === 10) {
-        const newPhoneNumber = phoneNumber.slice(0, [phoneNumber.length - 2])
+        const newPhoneNumber = phoneNumber.slice(0, [phoneLength - 2]);
+        const newDefaultNumber = defaultNumber.slice(0, [phoneLength - 1]) + '0' + defaultNumber.slice(phoneLength);
         setPhoneNumber(newPhoneNumber);
+        setDefaultNumber(newDefaultNumber);
       } else {
-        const newPhoneNumber = phoneNumber.slice(0, [phoneNumber.length - 1])
+        const newPhoneNumber = phoneNumber.slice(0, [phoneLength - 1]);
+        const newDefaultNumber = defaultNumber.slice(0, [phoneLength - 1]) + '0' + defaultNumber.slice(phoneLength);
         setPhoneNumber(newPhoneNumber);
+        setDefaultNumber(newDefaultNumber);
       }
     }
   }
@@ -67,12 +82,12 @@ function Phone(props) {
       </div>
       <div className="phoneKeyboardContainer">
         <div className="stepBack textColor">
-          <a href="#" className="textColor">
+          <div className="textColor" onClick={back}>
             <svg className="am-icon am-icon-back am-icon-md textColor">
               <use xlinkHref="#back"></use>
             </svg>
-            <NavLink className="textColor" to="/partySize">Back</NavLink>
-          </a>
+            Back
+          </div>
         </div>
         <div onClick={saveData} className="stepNext textColor">
           Done
@@ -89,7 +104,7 @@ function Phone(props) {
             </div>
             <div className="phoneShow">
               <div className="phoneShowShadow">
-                000-0000-0000
+                {defaultNumber}
               </div>
               <div className="inputPhoneShow">
                 {phoneNumber}

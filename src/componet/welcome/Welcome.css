@@ -1,13 +1,13 @@
 
 .headerContent{
-    height: 110px;
-    font-size: 35px;
-    font-weight: 900;
-    line-height: 110px;
-    text-align:center;
-    letter-spacing: 2px;
-    color: #fff;
-    background-color: #717171;
+  height: 110px;
+  font-size: 35px;
+  font-weight: 900;
+  line-height: 110px;
+  text-align:center;
+  letter-spacing: 2px;
+  color: #fff;
+  background-color: #717171;
 }
 
 .logo{
@@ -17,22 +17,22 @@
 }
 
 .left{
-    padding-left: 56px;
-    padding-top: 40px;
-    padding-right: 26px;
-    line-height: 45px;
-    font-size: 22px;
-    text-align: left;
-
+  /*padding-left: 56px;*/
+  padding-top: 40px;
+  /*padding-right: 26px;*/
+  width: 42%;
+  line-height: 45px;
+  font-size: 22px;
+  text-align: left;
 }
 
 .right{
+  width: 58%;
   padding-left: 11px;
   padding-top: 58px;
 }
 
 .left, .right{
-  width: 50%;
   float: left;
   display: block;
   box-sizing: border-box;
@@ -55,8 +55,7 @@
   font-size: 34px;
   line-height: 44px;
 }
-.button {
-  
+.button {  
   border: 3px solid #3cd0a8;
   border-radius: 5px;
   width: 130px;
@@ -65,21 +64,20 @@
   padding: 10px 0px;
 }
 
-.tableHeader ,.tableBody{
-  width: 450px;
+.tableHeader {
+  width: 100%;
   float: left;
   font-weight: 900;
   text-align: center;
 }
 
-.tableHeader table , .tableBody table{
+.tableHeader table {
   width: 100%;
   border-spacing: 0;
   table-layout: fixed;
 }
 
-.tableHeader table thead tr td, 
-.tableBody table thead tr td{
+.tableHeader table thead tr td {
   background: #3cd0a8;
   color: #ffffff;
   border-right: 1px solid #ffffff;
@@ -87,12 +85,12 @@
 }
 
 .tableHeader table thead tr td:last-child, 
-.tableBody table tbody tr td:last-child{
-    border-right: 0 !important
+.tableBody tr td:last-child{
+  border-right: 0 !important
 }
 
 .tableHeader table tr:last-child td, 
-.tableBody table tr:last-child td{ 
+.tableBody tr:last-child td{ 
   border-bottom: 0 !important;
 }
 
@@ -105,3 +103,12 @@
   border-bottom: 1px solid #b3b3b3;
   background: #f0f0f0;
 }
+
+.primaryArea{
+  max-width: 1000px;
+  min-width: 700px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+

@@ -18,7 +18,7 @@
 
 .phoneKeyboardContainer{
   position: relative;
-  width: 100%;
+  min-width: 700px;
   margin-top: 24px;
 }
 
@@ -27,21 +27,21 @@
 }
 
 .stepBack{
-  left: 35px;
+  left: 20px;
 }
 
 .stepNext{
-  right: 35px;
+  right: 20px;
 }
 
 .stepNext, .stepBack{
-    position: absolute;
-    top: 50%;
-    height: 80px;
-    margin-top: -40px;
-    font-size: 36px;
-    font-weight: 900;
-    vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  height: 80px;
+  margin-top: -40px;
+  font-size: 36px;
+  font-weight: 900;
+  vertical-align: middle;
 }
 
 .stepNext a , .stepBack a{
@@ -64,11 +64,11 @@
 
 .inputResultp{
   padding: 10px 8px;
-    height: 68px;
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 31px;
-    text-align: left;
+  height: 68px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 31px;
+  text-align: left;
 }
 
 .phoneIcon{
@@ -84,7 +84,7 @@
   height: 49px;
 }
 
-.phoneKeyboardContainer .phoneKeyboard {
+.phoneKeyboard {
   width: 400px;
   margin: 0 auto;
 }
@@ -98,16 +98,16 @@
 }
 
 .phoneShow{
-    width: 315px;
-    display: inline-block;
-    float: left;
-    font-size: 34px;
-    box-sizing: border-box;
-    font-weight: 900;
-    padding: 10px 23px 8px 23px;
-    letter-spacing: 2px;
-    line-height: 31px;
-    position: relative;
+  width: 315px;
+  display: inline-block;
+  float: left;
+  font-size: 34px;
+  box-sizing: border-box;
+  font-weight: 900;
+  padding: 10px 23px 8px 23px;
+  letter-spacing: 2px;
+  line-height: 31px;
+  position: relative;
 }
 
 .phoneShowShadow{
