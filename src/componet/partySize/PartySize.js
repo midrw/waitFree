@@ -13,7 +13,7 @@ class NumberKeyboard extends React.Component {
   }
 
   countChange = (e) => {
-    if (this.state.count == 0) {
+    if (this.state.count === '0') {
       const newCount = e.target.innerHTML;
       this.setState({ count: newCount });
       this.triggerChange(newCount);
@@ -29,7 +29,7 @@ class NumberKeyboard extends React.Component {
   }
 
   countDelete = (e) => {
-    if (this.state.count == 0) {
+    if (this.state.count === '0') {
       return;
     } else {
       if (this.state.count.length === 1) {
